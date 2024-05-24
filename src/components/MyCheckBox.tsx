@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import classnames from 'classnames';
-import {Simulate} from "react-dom/test-utils";
-import select = Simulate.select;
 
 const defaultProps = {
     className: ""
