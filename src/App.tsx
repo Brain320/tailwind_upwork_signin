@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './App.css';
-import Login from './Login';
-import Register from './Register';
+import './css/App.css';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 interface SignUpFormState {

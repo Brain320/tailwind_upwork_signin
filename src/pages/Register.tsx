@@ -1,12 +1,14 @@
 // import { PhotoIcon, UserCircleIcon } from 'heroicons'
-import { Link } from 'react-router-dom';
-import MyInput from "./MyInput";
+import {Link} from 'react-router-dom';
+import MyInput from "../components/MyInput";
+import MyCheckBox from "../components/MyCheckBox";
 import React from "react";
+import PasswordInput from "../components/PasswordInput";
 
 function Header() {
     return (
-        <div className="py-4 px-1 w-full fixed t-0 bg-white">
-            <div className="w-1/5 md:ml-4 md:mt-4 md:w-2/12">
+        <div className="px-4 w-full flex items-center h-[64px] fixed t-0 bg-white">
+            <div className="w-[82px]">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102 28" role="img" aria-hidden="true">
                         <path fill="#14a800"
@@ -39,14 +41,14 @@ export default function Register() {
             <div className='flex justify-center'>
                 <div className="p-4 md:p-20 w-full lg:w-3/4 mt-20">
                     <div className=" w-full">
-                    <h2 className=" text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+                        <h2 className=" text-center text-3xl leading-9 tracking-tight text-gray-900">
                             Sign up to find work you love
                         </h2>
                     </div>
-                    <div className="md:flex mt-10">
+                    <div className="md:flex my-6">
                         <button
-                            className="md:w-1/2 flex justify-center items-center w-full rounded-md bg-transparent px-3 py-2
-                    text-sm font-semibold leading-6 border-2 border-black text-black shadow-sm focus-visible:outline
+                            className="md:w-1/2 flex justify-center items-center w-full rounded-xl bg-transparent px-3 py-2
+                    text-base leading-6 border-[1px] border-black text-black shadow-sm focus-visible:outline
                     focus-visible:outline-2 focus-visible:outline-offset-2 md:mr-1"
                         >
                             <svg width="10px" height="11.4px" version="1.1" viewBox="0 0 3.8469 4.7625"
@@ -59,9 +61,9 @@ export default function Register() {
                             Continue with Apple
                         </button>
                         <button
-                            className="relative flex justify-center items-center md:w-1/2 w-full rounded-md bg-indigo-600 px-3 py-2 text-sm
-                            font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2
-                    focus-visible:outline-offset-2 focus-visible:outline-indigo-600 md:ml-1 mt-6 md:mt-0"
+                            className="relative flex justify-center items-center md:w-1/2 w-full rounded-xl bg-[#4285f4] px-3 py-2 text-base
+                            leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2
+                    focus-visible:outline-offset-2 focus-visible:outline-indigo-600 md:ml-1 mt-4 md:mt-0"
                         >
                             <div className="absolute left-0">
                                 <svg width='38' height='38' className="rounded-xl" viewBox='0 0 101.33 101.33'
@@ -85,25 +87,31 @@ export default function Register() {
                             Continue with Google
                         </button>
                     </div>
-                    <p className="btn-separator my-8x mt-10"><span className="font-weight-body">or</span></p>
+                    <p className="btn-separator my-6"><span className="font-weight-body">or</span></p>
                     <form>
-                        <div className='flex mt-10'>
+                        <div className='flex mt-12'>
                             <div className="w-1/2">
-                                <MyInput name="firstname" label="First name"  />
+                                <MyInput name="firstname" label="First name"/>
                             </div>
                             <div className="w-1/2 ml-1">
-                                <MyInput name="lastname" label="Last name"  />
+                                <MyInput name="lastname" label="Last name"/>
                             </div>
                         </div>
-                        <div className="w-full mt-6">
-                            <MyInput name="email" label="Email" type="email" />
+                        <div className="w-full mt-3">
+                            <MyInput name="email" label="Email" type="email"/>
                         </div>
-                        <div className="w-full mt-6">
-                            <MyInput name="password" label="Password" type="password" />
+                        <div className="w-full mt-3">
+                            <label htmlFor="password"
+                                   className="block text-base text-semibold text-left font-medium leading-6 text-gray-900">
+                                Password
+                            </label>
+                            <div className="mt-2">
+                                <PasswordInput />
+                            </div>
                         </div>
-                        <div className="w-full mt-10">
+                        <div className="w-full mt-3">
                             <label htmlFor="firstname"
-                                   className="block text-sm text-left font-medium leading-6 text-gray-900">
+                                   className="block text-base text-semibold text-left font-medium leading-6 text-gray-900">
                                 Country
                             </label>
                             <div className="mt-2">
@@ -112,8 +120,8 @@ export default function Register() {
                                         id="country"
                                         name="country"
                                         autoComplete="country-name"
-                                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm
-                                    ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600
+                                        className="block w-full rounded-md border-0 py-3 px-3 text-gray-900
+                                    ring-1 ring-gray-300
                                     sm:text-sm sm:leading-6"
                                     >
                                         <option>United States</option>
@@ -123,42 +131,16 @@ export default function Register() {
                                 </div>
                             </div>
                         </div>
-                        <div className="relative flex gap-x-3 mt-10">
-                            <div className="flex h-6 items-center">
-                                <label className='text-sm leading-6 flex items-center'>
-                                    <input
-                                        id="comments"
-                                        name="comments"
-                                        type="checkbox"
-                                        className="h-6 w-6 mr-2 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                                    />
-                                    <span className="text-gray-500">Send me helpful emails to find rewarding work and job leads.</span>
-                                </label>
-                            </div>
-
-                        </div>
-                        <div className="relative flex gap-x-3 mt-6">
-                            <div className="flex h-6 items-center">
-                                <label className='text-sm leading-6 text-left'>
-                                    <input
-                                        id="comments"
-                                        name="comments"
-                                        type="checkbox"
-                                        className="h-6 w-6 mr-2 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                                    />
-                                    <span className="text-gray-500">Yes, I understand and agree to the&nbsp;
-                                        <a href="#" className='a-link'>Upwork Terms of Service </a>, including the&nbsp;
-                                        <a href="#" className='a-link'>User Agreement</a> and
-                                        <a href="#" className='a-link'>Privacy Policy</a> .</span>
-                                </label>
-
-                            </div>
-                        </div>
+                        <MyCheckBox className="mt-10 mb-4" content={<span>Send me helpful emails to find rewarding work and job leads.</span>}/>
+                        <MyCheckBox content={<span className="text-gray-500">Yes, I understand and agree to the&nbsp;
+                            <a href="#" className='a-link'>Upwork Terms of Service </a>, including the&nbsp;
+                            <a href="#" className='a-link'>User Agreement</a> and
+                                        <a href="#" className='a-link'>Privacy Policy</a> .</span>}/>
                         <div className="mt-6 flex items-center justify-center gap-x-6">
                             <button
                                 type="submit"
                                 className="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2
-                            focus-visible:outline-offset-2 "
+                        focus-visible:outline-offset-2 "
                             >
                                 Create my account
                             </button>

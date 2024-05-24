@@ -1,16 +1,17 @@
 import React from "react";
 const defaultProps = {
-    type : "text"
+    type : "text",
+    placeholder: ""
 }
 type props = {
-    name: String, label: String, type?:String
+    name: String, label: String, type?:String, placeholder ?: String
 };
 const MyInput:React.FunctionComponent<props> =
     (props) => {
     return (
         <>
             <label htmlFor={`${props.name}`}
-                   className="block text-sm text-left font-medium leading-6 text-gray-900">
+                   className="block text-base text-semibold text-left font-medium leading-6 text-gray-900">
                 {props.label}
             </label>
             <div className="mt-2">
@@ -18,9 +19,10 @@ const MyInput:React.FunctionComponent<props> =
                     <input
                         type={`${props.type}`}
                         name={`${props.name}`}
+                        placeholder={`${props.placeholder}`}
                         id={`${props.name}`}
                         autoComplete="firstname"
-                        className="block rounded-md flex-1 border-2 border-gray-500 py-1.5 pl-1 text-gray-700 sm:text-sm sm:leading-6"
+                        className="w-full block rounded-md border-2 border-gray-200 py-2 pl-3 text-gray-700 sm:text-sm sm:leading-6"
                     />
                 </div>
             </div>
