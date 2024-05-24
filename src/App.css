@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+}
+.div-logo {
+  text-align: left;
+  width: 10%;
+}
+@media screen  and (max-width: 640px) {
+  .div-logo {
+    text-align: center;
+    width: 30%;
+    margin-left: 15px;
+    margin-top: 15px;
+  }  
+}
+
+@media screen  and (max-width: 1366px) {
+  .div-logo {
+    text-align: center;
+    width: 20%;
+    margin-left: 15px;
+    margin-top: 15px;
+  }  
+}
