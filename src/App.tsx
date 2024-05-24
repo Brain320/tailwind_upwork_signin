@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import Login from './Login';
 import Register from './Register';
-import Logo from './Logo';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 interface SignUpFormState {
@@ -39,7 +38,6 @@ function App() {
 
   return (
     <div className="App">
-      <Logo  />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />

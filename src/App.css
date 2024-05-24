@@ -1,24 +1,10 @@
 .App {
   text-align: center;
 }
-.div-logo {
-  text-align: left;
-  width: 10%;
+body * {
+  font-family: "Neue Montreal", "Helvetica Neue",Helvetica,Arial,
+  sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
-@media screen  and (max-width: 640px) {
-  .div-logo {
-    text-align: center;
-    width: 30%;
-    margin-left: 15px;
-    margin-top: 15px;
-  }  
-}
-
-@media screen  and (max-width: 1366px) {
-  .div-logo {
-    text-align: center;
-    width: 20%;
-    margin-left: 15px;
-    margin-top: 15px;
-  }  
-}
+/*.login-container {*/
+/*  font-size: 2rem;*/
+/*}*/
